@@ -1,0 +1,27 @@
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[package]
+name = "rust-template"
+version = "0.1.0"
+authors = ["Michael G. Noll <miguno@miguno.com>"]
+description = """
+A multi-line
+description of
+this project
+"""
+categories = ["command-line-utilities"]
+keywords = [
+    "foo",
+    "bar",
+]
+license = "MIT"
+edition = "2021"
+readme = "README.md"
+documentation = "https://github.com/miguno/rust-template"
+homepage = "https://github.com/miguno/rust-template"
+repository = "https://github.com/miguno/rust-template"
+
+[[bin]]
+path = "src/main.rs"
+name = "rust-template"
+
+[dependencies]

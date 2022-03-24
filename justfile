@@ -1,0 +1,55 @@
+# Extracts the binary name from the settings `name = <...>` in the `[[bin]]`
+# section of Cargo.toml
+binary := `sed -n '/[[bin]]/,/name =/p' Cargo.toml | awk '/^name =/{gsub(/"/, "", $3); print $3}'`
+
+# show available targets
+default:
+    just -l
+
+# detect known vulnerabilities (requires https://github.com/rustsec/rustsec)
+audit:
+    cargo audit
+
+# format source code
+format:
+    cargo +nightly fmt
+
+# build debug executable
+build: lint
+    cargo build && echo "Executable at target/debug/{{binary}}"
+
+# linters (requires https://github.com/rust-lang/rust-clippy)
+lint:
+    # Default clippy settings (used by `cargo [build, test]` automatically)
+    #cargo clippy
+    #
+    # If you want stricter clippy settings, start with the suggestion below
+    # and consider adding this `lint` target as a dependency to other just
+    # targets like `build` and `test`.
+    #
+    # --all-targets:  check sources and tests
+    # --all-features: check non-default crate features
+    # -D warnings:    fail the build when encountering warnings
+    #
+    cargo clippy --all-targets --all-features -- -D warnings
+
+# build release executable
+release:
+    cargo build --release && echo "Executable at target/release/{{binary}}"
+
+# build and run
+run:
+    cargo run
+
+# detect outdated crates (requires https://github.com/kbknapp/cargo-outdated)
+outdated:
+    cargo outdated
+
+# run tests (requires https://nexte.st/)
+test: lint
+    cargo nextest run
+
+# run check then tests when sources change (requires https://github.com/watchexec/cargo-watch)
+watch-test:
+    cargo watch -x check -x 'nextest run'
+
