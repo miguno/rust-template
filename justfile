@@ -4,7 +4,7 @@ binary := `sed -n '/[[bin]]/,/name =/p' Cargo.toml | awk '/^name =/{gsub(/"/, ""
 
 # show available targets
 default:
-    just -l
+    @just --list --justfile {{justfile()}}
 
 # detect known vulnerabilities (requires https://github.com/rustsec/rustsec)
 audit:
