@@ -54,3 +54,8 @@ test: lint
 watch-test:
     cargo watch -x check -x 'nextest run'
 
+# print system information such as OS and architecture
+system-info:
+  @echo "architecture: {{arch()}}"
+  @echo "os: {{os()}}"
+  @echo "os family: {{os_family()}}"
