@@ -48,6 +48,4 @@ FROM scratch
 WORKDIR /root/
 COPY --from=builder /usr/local/cargo/bin/rust-template /usr/local/bin/rust-template
 
-#EXPOSE 8123
-#ENTRYPOINT ["./app"]
 CMD ["/usr/local/bin/rust-template"]
