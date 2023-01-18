@@ -42,6 +42,10 @@ release:
 run:
     cargo run
 
+# install locally
+install:
+    cargo install --path .
+
 # detect outdated crates (requires https://github.com/kbknapp/cargo-outdated)
 outdated:
     cargo outdated
