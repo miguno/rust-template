@@ -44,9 +44,13 @@ release:
 run:
     cargo run
 
-# build and install locally
+# build and install the binary locally
 install: build test
     cargo install --path .
+
+# build and install the static binary locally
+install-static: build test
+    RUSTFLAGS='-C target-feature=+crt-static' cargo install --path .
 
 # detect outdated crates (requires https://github.com/kbknapp/cargo-outdated)
 outdated:
