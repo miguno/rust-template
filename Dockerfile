@@ -18,8 +18,6 @@ RUN \
     # test
     cargo test
 
-# `cargo install` uses "$CARGO_HOME" in this setup as install location, which
-# defaults to `/usr/local/cargo`.  See `cargo help install`.
 RUN \
     # Ensure that a static binary is built.  Otherwise trying to run a
     # container from this image will error with "<the binary> not found".
@@ -36,7 +34,10 @@ RUN \
     #   [Requesting program interpreter: /lib/ld-linux-aarch64.so.1]
     #
     RUSTFLAGS='-C target-feature=+crt-static' \
-    cargo install --path . # install locally
+    # Installs the binary locally.
+    # `cargo install` uses "$CARGO_HOME" in this setup as install location, which
+    # defaults to `/usr/local/cargo`.  See `cargo help install`.
+    cargo install --path .
 
 # Stage 2 (to create a downsized "container executable", ~5MB)
 # ============================================================
