@@ -11,13 +11,13 @@ RUN rustc --version
 
 WORKDIR /app
 COPY . .
-RUN \
-    # lint
-    rustup component add clippy && \
-    cargo clippy --all-targets --all-features -- -D warnings && \
-    # test
-    cargo test
+# Lint
+RUN rustup component add clippy && \
+    cargo clippy --all-targets --all-features -- -D warnings
+# Test
+RUN cargo test
 
+# Build and install a static binary
 RUN \
     # Ensure that a static binary is built.  Otherwise trying to run a
     # container from this image will error with "<the binary> not found".
