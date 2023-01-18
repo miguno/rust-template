@@ -49,4 +49,4 @@ RUN \
 FROM scratch
 WORKDIR /root/
 COPY --from=builder /usr/local/cargo/bin/rust-template /usr/local/bin/rust-template
-CMD ["/usr/local/bin/rust-template"]
+CMD ["rust-template"]
