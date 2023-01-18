@@ -43,7 +43,7 @@ run:
     cargo run
 
 # install locally
-install:
+install: build test
     cargo install --path .
 
 # detect outdated crates (requires https://github.com/kbknapp/cargo-outdated)
