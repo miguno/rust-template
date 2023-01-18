@@ -5,7 +5,7 @@
 
 Use [just](https://github.com/casey/just) to run the [justfile](justfile).
 
-```
+```shell
 $ just
 Available recipes:
     audit        # detect known vulnerabilities (requires https://github.com/rustsec/rustsec)
