@@ -16,7 +16,6 @@ RUN rustup component add clippy && \
     cargo clippy --all-targets --all-features -- -D warnings
 # Test
 RUN cargo test
-
 # Build and install a static binary
 RUN \
     # Ensure that a static binary is built.  Otherwise trying to run a
