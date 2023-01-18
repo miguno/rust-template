@@ -56,7 +56,7 @@ outdated:
 test: lint
     cargo nextest run
 
-# run tests in vanilla mode
+# run tests in vanilla mode (use when nextest is not installed)
 test-vanilla: lint
     cargo test
 
