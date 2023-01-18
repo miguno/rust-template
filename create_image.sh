@@ -12,6 +12,6 @@ echo "Building image '$IMAGE_NAME:$IMAGE_TAG'..."
 # Use BuildKit, i.e. `buildx build` instead of just `build`
 # https://docs.docker.com/build/
 #
-# Tip: Add `--progress=plain` to see the full docker output when you are
+# TIP: Add `--progress=plain` to see the full docker output when you are
 # troubleshooting the build setup of your image.
 docker buildx build -t "$IMAGE_NAME":"$IMAGE_TAG" .
