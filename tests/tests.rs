@@ -10,6 +10,6 @@ mod tests {
     #[test]
     fn verify_doubler() {
         let a = vec![1, 2, 3, 4, 5];
-        assert_eq!(doubler(a), vec![2,4,6,8,10]);
+        assert_eq!(doubler(a), vec![2, 4, 6, 8, 10]);
     }
 }
