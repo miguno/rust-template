@@ -2,6 +2,8 @@
 # section of Cargo.toml
 binary := `sed -n '/[[bin]]/,/name =/p' Cargo.toml | awk '/^name =/{gsub(/"/, "", $3); print $3}'`
 
+project_dir := justfile_directory()
+
 # show available targets
 default:
     @just --list --justfile {{justfile()}}
@@ -63,3 +65,13 @@ system-info:
   @echo "architecture: {{arch()}}"
   @echo "os: {{os()}}"
   @echo "os family: {{os_family()}}"
+
+# create a docker image
+docker-image:
+    @echo "Creating a docker image ..."
+    ./create_image.sh
+
+# run the docker image (create it first)
+docker-run:
+    @echo "Running container from docker image ..."
+    ./start_container.sh
