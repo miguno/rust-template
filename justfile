@@ -44,7 +44,7 @@ release:
 run:
     cargo run
 
-# install locally
+# build and install locally
 install: build test
     cargo install --path .
 
