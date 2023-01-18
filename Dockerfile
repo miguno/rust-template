@@ -4,6 +4,7 @@
 # (https://docs.docker.com/build/building/multi-stage/)
 
 # Stage 1 (to create a "build" image)
+# ===================================
 FROM rust:1.66.0 AS builder
 # smoke test to verify if rust toolchain is available
 RUN rustc --version
@@ -38,8 +39,9 @@ RUN \
     cargo install --path . # install locally
 
 # Stage 2 (to create a downsized "container executable", ~5MB)
-
-# If you need SSL certificates for HTTPS, replace `FROM SCRATCH` with:
+# ============================================================
+#
+# If you need SSL certificates for HTTPS, replace `FROM scratch` with:
 #
 #   FROM alpine:3.17.1
 #   RUN apk --no-cache add ca-certificates
@@ -47,5 +49,4 @@ RUN \
 FROM scratch
 WORKDIR /root/
 COPY --from=builder /usr/local/cargo/bin/rust-template /usr/local/bin/rust-template
-
 CMD ["/usr/local/bin/rust-template"]
