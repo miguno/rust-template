@@ -56,6 +56,10 @@ outdated:
 test: lint
     cargo nextest run
 
+# run tests in vanilla mode
+test-vanilla: lint
+    cargo test
+
 # run check then tests when sources change (requires https://github.com/watchexec/cargo-watch)
 watch-test:
     cargo watch -x check -x 'nextest run'
