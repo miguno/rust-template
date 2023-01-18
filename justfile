@@ -66,12 +66,12 @@ system-info:
   @echo "os: {{os()}}"
   @echo "os family: {{os_family()}}"
 
-# create a docker image
+# create a docker image (requires Docker)
 docker-image:
     @echo "Creating a docker image ..."
     ./create_image.sh
 
-# run the docker image (create it first)
+# run the docker image (requires Docker)
 docker-run:
     @echo "Running container from docker image ..."
     ./start_container.sh
