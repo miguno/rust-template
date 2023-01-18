@@ -29,8 +29,11 @@ Good luck, have fun!
 
 ## Features
 
-* Simple app with a simple unit test setup.
-* Create and run Docker images for your Rust app.  The Docker build uses a
+* Simple app ([main.rs](src/main.rs)) with a simple unit test setup
+  ([tests.rs](tests/tests.rs)).
+* Create and run Docker images for your Rust app.
+  The [Docker build](Dockerfile) uses a
   [multi-stage build setup](https://docs.docker.com/build/building/multi-stage/)
   to minimize the size of the generated Docker image, which is 5M.
-* GitHub Action workflows for CI/CD support.
+* [GitHub Action workflows](https://github.com/miguno/rust-template/actions)
+  for CI/CD support.
