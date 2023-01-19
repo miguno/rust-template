@@ -35,6 +35,6 @@ Good luck, have fun!
 * Create and run Docker images for your Rust app.
   The [Docker build](Dockerfile) uses a
   [multi-stage build setup](https://docs.docker.com/build/building/multi-stage/)
-  to minimize the size of the generated Docker image, which is 5M.
+  to minimize the size of the generated Docker image, which is only 5MB.
 * [GitHub Action workflows](https://github.com/miguno/rust-template/actions)
   for CI/CD support.
