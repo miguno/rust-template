@@ -29,6 +29,9 @@ format:
 build: lint
     cargo build && echo "Executable at target/debug/{{binary}}"
 
+check:
+    cargo check
+
 # linters (requires https://github.com/rust-lang/rust-clippy)
 lint:
     # Default clippy settings (used by `cargo [build, test]` automatically):
@@ -44,6 +47,8 @@ lint:
     # -D warnings:    fail the build when encountering warnings
     #
     cargo clippy --all-targets --all-features -- -D warnings
+
+pre-release: check test lint
 
 # build release executable
 release:
