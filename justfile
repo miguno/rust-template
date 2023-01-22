@@ -1,8 +1,12 @@
 # Extracts the binary name from the settings `name = <...>` in the `[[bin]]`
 # section of Cargo.toml
-binary := `sed -n '/[[bin]]/,/name =/p' Cargo.toml | awk '/^name =/{gsub(/"/, "", $3); print $3}'`
+#
+# Alternative command:
+# `sed -n '/[[bin]]/,/name =/p' Cargo.toml | awk '/^name =/{gsub(/"/, "", $3); print $3}'`
+binary := `cargo pkgid | sed -rn s'/^.*\/(.*)#.*$/\1/p'`
 
 # Get version from Cargo.toml/Cargo.lock
+#
 # Alternative command:
 # `cargo metadata --format-version=1 | jq '.packages[]|select(.name=="rust-template").version'`
 version := `cargo pkgid | sed -rn s'/^.*#(.*)$/\1/p'`
