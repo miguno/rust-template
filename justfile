@@ -2,6 +2,11 @@
 # section of Cargo.toml
 binary := `sed -n '/[[bin]]/,/name =/p' Cargo.toml | awk '/^name =/{gsub(/"/, "", $3); print $3}'`
 
+# Get version from Cargo.toml/Cargo.lock
+# Alternative command:
+# `cargo metadata --format-version=1 | jq '.packages[]|select(.name=="rust-template").version'`
+version := `cargo pkgid | sed -rn s'/^.*#(.*)$/\1/p'`
+
 project_dir := justfile_directory()
 
 # show available targets
