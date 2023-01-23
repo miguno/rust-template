@@ -14,7 +14,7 @@ Available recipes:
     default             # show available targets
     docker-image-create # create a docker image (requires Docker)
     docker-image-size   # size of the docker image (requires Docker)
-    docker-run          # run the docker image (requires Docker)
+    docker-image-run    # run the docker image (requires Docker)
     format              # format source code
     install             # build and install the binary locally
     install-static      # build and install the static binary locally
