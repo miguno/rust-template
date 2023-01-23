@@ -5,13 +5,13 @@
 # `-o pipefail`: Prevent errors in a pipeline (`|`) from being masked
 set -uo pipefail
 
-declare -r IMAGE_NAME="miguno/rust-template"
-declare -r IMAGE_TAG="latest"
+# Import environment variables from .env
+set -o allexport && source .env && set +o allexport
 
-echo "Building image '$IMAGE_NAME:$IMAGE_TAG'..."
+echo "Building image '$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG'..."
 # Use BuildKit, i.e. `buildx build` instead of just `build`
 # https://docs.docker.com/build/
 #
 # TIP: Add `--progress=plain` to see the full docker output when you are
 # troubleshooting the build setup of your image.
-docker buildx build -t "$IMAGE_NAME":"$IMAGE_TAG" .
+docker buildx build -t "$DOCKER_IMAGE_NAME":"$DOCKER_IMAGE_TAG" .

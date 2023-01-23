@@ -1,3 +1,6 @@
+# Load environment variables from `.env` file.
+set dotenv-load
+
 # Extracts the binary name from the settings `name = <...>` in the `[[bin]]`
 # section of Cargo.toml
 #
@@ -89,9 +92,13 @@ system-info:
   @echo "os family: {{os_family()}}"
 
 # create a docker image (requires Docker)
-docker-image:
+docker-image-create:
     @echo "Creating a docker image ..."
     ./create_image.sh
+
+# size of the docker image (requires Docker)
+docker-image-size:
+    docker images $DOCKER_IMAGE_NAME
 
 # run the docker image (requires Docker)
 docker-run:
