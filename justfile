@@ -20,6 +20,10 @@ project_dir := justfile_directory()
 default:
     @just --list --justfile {{justfile()}}
 
+# evaluate and print all just variables
+evaluate:
+    @just --evaluate
+
 # detect known vulnerabilities (requires https://github.com/rustsec/rustsec)
 audit:
     cargo audit
