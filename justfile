@@ -24,6 +24,12 @@ default:
 evaluate:
     @just --evaluate
 
+# print system information such as OS and architecture
+system-info:
+  @echo "architecture: {{arch()}}"
+  @echo "os: {{os()}}"
+  @echo "os family: {{os_family()}}"
+
 # detect known vulnerabilities (requires https://github.com/rustsec/rustsec)
 audit:
     cargo audit
@@ -88,12 +94,6 @@ test-vanilla: lint
 # run check then tests when sources change (requires https://github.com/watchexec/cargo-watch)
 watch-test:
     cargo watch -x check -x 'nextest run'
-
-# print system information such as OS and architecture
-system-info:
-  @echo "architecture: {{arch()}}"
-  @echo "os: {{os()}}"
-  @echo "os family: {{os_family()}}"
 
 # create a docker image (requires Docker)
 docker-image-create:
