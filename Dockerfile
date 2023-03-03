@@ -16,6 +16,11 @@ RUN rustup component add clippy && \
     cargo clippy --all-targets --all-features -- -D warnings
 # Test
 RUN cargo test
+# Miri
+RUN rustup toolchain install nightly --component miri && \
+    cargo +nightly miri setup
+RUN cargo +nightly miri test
+RUN cargo +nightly miri run
 # Build and install a static binary
 RUN \
     # Ensure that a static binary is built.  Otherwise trying to run a
