@@ -3,6 +3,19 @@
 [![Rust workflow status](https://github.com/miguno/rust-template/actions/workflows/rust.yml/badge.svg)](https://github.com/miguno/rust-template/actions/workflows/rust.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+## Features
+
+* Simple app ([main.rs](src/main.rs)) with a simple unit test setup
+  ([tests.rs](tests/tests.rs)).
+* Create and run Docker images for your Rust app.
+  The [Docker build](Dockerfile) uses a
+  [multi-stage build setup](https://docs.docker.com/build/building/multi-stage/)
+  to minimize the size of the generated Docker image, which is only 5MB.
+* [GitHub Action workflows](https://github.com/miguno/rust-template/actions)
+  for CI/CD support.
+
+# Usage
+
 Use [just](https://github.com/casey/just) to run the [justfile](justfile).
 
 ```shell
@@ -13,12 +26,14 @@ Available recipes:
     check
     default             # show available targets
     docker-image-create # create a docker image (requires Docker)
-    docker-image-size   # size of the docker image (requires Docker)
     docker-image-run    # run the docker image (requires Docker)
+    docker-image-size   # size of the docker image (requires Docker)
+    evaluate            # evaluate and print all just variables
     format              # format source code
     install             # build and install the binary locally
     install-static      # build and install the static binary locally
     lint                # linters (requires https://github.com/rust-lang/rust-clippy)
+    miri                # detect undefined behavior with miri (requires https://github.com/rust-lang/miri)
     outdated            # detect outdated crates (requires https://github.com/kbknapp/cargo-outdated)
     pre-release
     release             # build release executable
@@ -31,13 +46,3 @@ Available recipes:
 
 Good luck, have fun!
 
-## Features
-
-* Simple app ([main.rs](src/main.rs)) with a simple unit test setup
-  ([tests.rs](tests/tests.rs)).
-* Create and run Docker images for your Rust app.
-  The [Docker build](Dockerfile) uses a
-  [multi-stage build setup](https://docs.docker.com/build/building/multi-stage/)
-  to minimize the size of the generated Docker image, which is only 5MB.
-* [GitHub Action workflows](https://github.com/miguno/rust-template/actions)
-  for CI/CD support.
