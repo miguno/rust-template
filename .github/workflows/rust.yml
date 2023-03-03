@@ -27,6 +27,15 @@ jobs:
         # --all-features: check non-default crate features
         # -D warnings:    fail the build when encountering warnings
         args: --all-targets --all-features -- -D warnings
+    - name: Install Miri
+      run: |
+        rustup toolchain install nightly --component miri
+        rustup override set nightly
+        cargo miri setup
+    - name: Detect undefined behavior with Miri
+      run: |
+        cargo +nightly miri test
+        cargo +nightly miri run
     - name: Build
       run: cargo build --verbose
     - name: Run tests
