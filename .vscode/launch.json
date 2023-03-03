@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'rust-template'",
+            "name": "Debug executable 'rust-template-app'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=rust-template",
+                    "--bin=rust-template-app",
                     "--package=rust-template"
                 ],
                 "filter": {
-                    "name": "rust-template",
+                    "name": "rust-template-app",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'rust-template'",
+            "name": "Debug unit tests in executable 'rust-template-app'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=rust-template",
+                    "--bin=rust-template-app",
                     "--package=rust-template"
                 ],
                 "filter": {
-                    "name": "rust-template",
+                    "name": "rust-template-app",
                     "kind": "bin"
                 }
             },

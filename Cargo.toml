@@ -22,6 +22,6 @@ repository = "https://github.com/miguno/rust-template"
 
 [[bin]]
 path = "src/main.rs"
-name = "rust-template"
+name = "rust-template-app"
 
 [dependencies]

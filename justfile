@@ -6,7 +6,7 @@ set dotenv-load
 #
 # Alternative command:
 # `sed -n '/[[bin]]/,/name =/p' Cargo.toml | awk '/^name =/{gsub(/"/, "", $3); print $3}'`
-binary := `cargo pkgid | sed -rn s'/^.*\/(.*)#.*$/\1/p'`
+binary := `sed -n '/[[bin]]/,/name =/p' Cargo.toml | awk '/^name =/{gsub(/"/, "", $3); print $3}'`
 
 # Get version from Cargo.toml/Cargo.lock
 #
