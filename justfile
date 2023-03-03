@@ -63,6 +63,12 @@ lint:
 
 pre-release: check test lint
 
+# detect undefined behavior with miri (requires https://github.com/rust-lang/miri)
+miri:
+    cargo clean
+    cargo +nightly miri test
+    cargo +nightly miri run
+
 # build release executable
 release:
     cargo build --release && echo "Executable at target/release/{{binary}}"
