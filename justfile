@@ -101,6 +101,10 @@ test-vanilla: lint
 watch-test:
     cargo watch -x check -x 'nextest run'
 
+# show version of this project
+version:
+    @echo "{{version}}"
+
 # create a docker image (requires Docker)
 docker-image-create:
     @echo "Creating a docker image ..."

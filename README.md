@@ -41,6 +41,7 @@ Available recipes:
     system-info         # print system information such as OS and architecture
     test                # run tests (requires https://nexte.st/)
     test-vanilla        # run tests in vanilla mode (use when nextest is not installed)
+    version             # show version of this project
     watch-test          # run check then tests when sources change (requires https://github.com/watchexec/cargo-watch)
 ```
 
