@@ -45,6 +45,10 @@ build: lint
 check:
     cargo check
 
+# show dependencies of this project
+deps:
+    cargo tree
+
 # linters (requires https://github.com/rust-lang/rust-clippy)
 lint:
     # Default clippy settings (used by `cargo [build, test]` automatically):
