@@ -65,6 +65,7 @@ lint:
     #
     cargo clippy --all-targets --all-features -- -D warnings
 
+# check, test, lint, miri
 pre-release: check test lint miri
 
 # detect undefined behavior with miri (requires https://github.com/rust-lang/miri)
