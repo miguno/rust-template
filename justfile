@@ -110,9 +110,9 @@ watch-test:
 version:
     @echo "{{version}}"
 
-# create a docker image (requires Docker)
-docker-image-create:
-    @echo "Creating a docker image ..."
+# create a docker image (requires Docker); run with SHOW_PROGRESS=1 to enable verbose output
+docker-image-create $SHOW_PROGRESS="0":
+    @echo "Creating a docker image ... (add SHOW_PROGRESS=1 to just command to enable verbose output)"
     ./create_image.sh
 
 # size of the docker image (requires Docker)
