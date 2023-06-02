@@ -75,7 +75,7 @@ miri:
     cargo +nightly miri run
 
 # build release executable
-release:
+release: pre-release
     cargo build --release && echo "Executable at target/release/{{binary}}"
 
 # build and run
