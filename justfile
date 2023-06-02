@@ -63,7 +63,7 @@ lint:
     # --all-features: check non-default crate features
     # -D warnings:    fail the build when encountering warnings
     #
-    cargo clippy --all-targets --all-features -- -D warnings
+    cargo clippy --verbose --all-targets --all-features -- -D warnings
 
 # check, test, lint, miri
 pre-release: check test lint miri
