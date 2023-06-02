@@ -104,7 +104,7 @@ test-vanilla: lint
 
 # run check then tests when sources change (requires https://github.com/watchexec/cargo-watch)
 watch-test:
-    cargo watch -x check -x 'nextest run'
+    cargo watch -q -c -x check -x 'nextest run'
 
 # show version of this project
 version:
