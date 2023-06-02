@@ -49,7 +49,7 @@ RUN \
 #
 # If you need SSL certificates for HTTPS, replace `FROM scratch` with:
 #
-#   FROM alpine:3.17.1
+#   FROM alpine:3.18.0
 #   RUN apk --no-cache add ca-certificates
 #
 FROM scratch
