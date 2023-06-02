@@ -25,7 +25,7 @@ jobs:
           # --all-targets:  check sources and tests
           # --all-features: check non-default crate features
           # -D warnings:    fail the build when encountering warnings
-          args: --all-targets --all-features -- -D warnings
+          args: --all-targets --all-features --verbose -- -D warnings
       - name: Install Miri
         run: |
           rustup toolchain install nightly --component miri
