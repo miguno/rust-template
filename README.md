@@ -5,7 +5,8 @@
 
 ## Features
 
-* Simple app ([main.rs](src/main.rs)) with a simple unit test setup
+* Simple app ([main.rs](src/main.rs)) that uses a
+  toy library ([lib.rs](src/lib.rs)), along with a simple unit test setup
   ([tests.rs](tests/tests.rs)).
 * Create and run Docker images for your Rust app.
   The [Docker build](Dockerfile) uses a
