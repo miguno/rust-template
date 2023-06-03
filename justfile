@@ -34,6 +34,10 @@ system-info:
 audit:
     cargo audit
 
+# show test coverage (requires https://lib.rs/crates/cargo-llvm-cov)
+coverage:
+    cargo llvm-cov nextest --open
+
 # format source code
 format:
     cargo +nightly fmt
