@@ -49,6 +49,10 @@ check:
 deps:
     cargo tree
 
+# generate the documentation of this project
+doc:
+    cargo doc --open
+
 # linters (requires https://github.com/rust-lang/rust-clippy)
 lint:
     # Default clippy settings (used by `cargo [build, test]` automatically):
