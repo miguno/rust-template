@@ -6,7 +6,7 @@
 # Stage 1 (to create a "build" image)
 # ===================================
 # Official rust images at https://hub.docker.com/_/rust
-FROM rust:1.70.0 AS builder
+FROM rust:1.69.0 AS builder
 # smoke test to verify if rust toolchain is available
 RUN rustc --version
 
