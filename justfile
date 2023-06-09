@@ -54,7 +54,7 @@ deps:
     cargo tree
 
 # generate the documentation of this project
-doc:
+docs:
     cargo doc --open
 
 # linters (requires https://github.com/rust-lang/rust-clippy)
