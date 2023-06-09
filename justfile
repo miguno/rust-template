@@ -121,7 +121,7 @@ version:
 # create a docker image (requires Docker); run with SHOW_PROGRESS=1 to enable verbose output
 docker-image-create $SHOW_PROGRESS="0":
     @echo "Creating a docker image ... (add SHOW_PROGRESS=1 to just command to enable verbose output)"
-    ./create_image.sh
+    ./tools/docker/create_image.sh
 
 # size of the docker image (requires Docker)
 docker-image-size:
@@ -130,4 +130,4 @@ docker-image-size:
 # run the docker image (requires Docker)
 docker-image-run:
     @echo "Running container from docker image ..."
-    ./start_container.sh
+    ./tools/docker/start_container.sh
