@@ -17,4 +17,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Build the Docker image
-      run: docker buildx build . --file Dockerfile --tag miguno/rust-template:$(date +%s)
+      run: ./tools/docker/create_image.sh
