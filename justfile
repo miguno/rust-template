@@ -30,6 +30,14 @@ system-info:
   @echo "os: {{os()}}"
   @echo "os family: {{os_family()}}"
 
+# show Assembly, LLVM-IR, MIR and WASM for Rust code (requires https://github.com/pacak/cargo-show-asm)
+asm *args='':
+    # Examples:
+    # just asm --lib
+    # just asm --lib 0
+    # just asm --lib "rust_template::doubler"
+    cargo asm {{args}}
+
 # detect known vulnerabilities (requires https://github.com/rustsec/rustsec)
 audit:
     cargo audit
