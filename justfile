@@ -65,6 +65,10 @@ deps:
 docs:
     cargo doc --open
 
+# Show license of dependencies (requires https://github.com/onur/cargo-license)
+license:
+    cargo license
+
 # linters (requires https://github.com/rust-lang/rust-clippy)
 lint:
     # Default clippy settings (used by `cargo [build, test]` automatically):
