@@ -17,6 +17,7 @@ echo "Building image '$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG'..."
 # https://docs.docker.com/build/
 #
 DOCKER_OPTIONS=""
+SHOW_PROGRESS="${SHOW_PROGRESS:-0}"
 if [[ "$SHOW_PROGRESS" -ne 0 ]]; then
     # `--progress=plain` prints the full docker output, very useful when you
     # are troubleshooting the build setup of your image
