@@ -1,5 +1,5 @@
+use base64::{engine::general_purpose, Engine as _};
 use rust_template::sum;
-use base64::{Engine as _, engine::general_purpose};
 
 pub fn main() {
     let s = "Hello, world!";
@@ -11,5 +11,5 @@ pub fn main() {
     // (or `cargo tree`) in a terminal to show the dependencies of this
     // project, which will include the base64 crate.
     let b64 = general_purpose::STANDARD.encode(s.as_bytes());
-    println!("{}", b64);
+    println!("'{}' in base64: '{}'", s, b64);
 }
