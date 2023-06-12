@@ -118,7 +118,7 @@ pre-release: check test lint audit miri
 profile-release:
     # Requires a profile named 'profiling' in ~/.cargo/config.toml
     cargo build --profile profiling && \
-    samply record target/profiling/{{binary}}
+    RUST_BACKTRACE=1 samply record target/profiling/{{binary}}
 
 # build release executable
 release: pre-release
