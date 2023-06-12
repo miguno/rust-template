@@ -65,23 +65,6 @@ docker-image-run:
 docs:
     cargo doc --open
 
-# TODO: Implement 'flamegraph' target for Linux, too.
-# TODO: Find a stable setup, the current one fails often on macOS, see
-#       https://github.com/flamegraph-rs/flamegraph/issues/62
-# Show flamegraph (requires https://github.com/flamegraph-rs/flamegraph)
-flamegraph:
-    if [ "{{os()}}" == "macos" ]; then \
-        CARGO_PROFILE_RELEASE_DEBUG=true cargo flamegraph --root; \
-        if [ $? -eq 0 ]; then \
-            open flamegraph.svg; \
-        else \
-            echo; \
-            echo "ERROR: Flamegraph generation failed. Try re-running the command."; \
-        fi \
-    else \
-        echo "Not implemented yet for OS '{{os()}}'"; \
-    fi
-
 # format source code
 format:
     cargo +nightly fmt
