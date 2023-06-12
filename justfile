@@ -114,6 +114,12 @@ outdated:
 # check, test, lint, miri
 pre-release: check test lint audit miri
 
+# profile the release binary (requires https://github.com/mstange/samply, which uses profiler.firefox.com as UI)
+profile-release:
+    # Requires a profile named 'profiling' in ~/.cargo/config.toml
+    cargo build --profile profiling && \
+    samply record target/profiling/{{binary}}
+
 # build release executable
 release: pre-release
     cargo build --release && echo "Executable at target/release/{{binary}}"
