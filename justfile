@@ -134,9 +134,9 @@ run:
 
 # print system information such as OS and architecture
 system-info:
-  @echo "architecture: {{arch()}}"
-  @echo "os: {{os()}}"
-  @echo "os family: {{os_family()}}"
+    @echo "architecture: {{arch()}}"
+    @echo "os: {{os()}}"
+    @echo "os family: {{os_family()}}"
 
 # run tests (requires https://nexte.st/)
 test: lint
