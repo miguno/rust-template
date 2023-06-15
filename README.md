@@ -28,7 +28,7 @@ Available recipes:
     check             # analyze the current package and report errors, but don't build object files (faster than 'build')
     clean             # remove generated artifacts
     coverage          # show test coverage (requires https://lib.rs/crates/cargo-llvm-cov)
-    default           # show available targets
+    default           # show available just recipes
     deps              # show dependencies of this project
     docker-image-create $SHOW_PROGRESS="0" # create a docker image (requires Docker); run with SHOW_PROGRESS=1 to enable verbose output
     docker-image-run  # run the docker image (requires Docker)
