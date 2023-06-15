@@ -16,7 +16,7 @@ version := `cargo pkgid | sed -rn s'/^.*#(.*)$/\1/p'`
 
 project_dir := justfile_directory()
 
-# show available targets
+# show available just recipes
 default:
     @just --list --justfile {{justfile()}}
 
