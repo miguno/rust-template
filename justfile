@@ -150,6 +150,11 @@ test-vanilla: lint
 version:
     @echo "{{version}}"
 
+# test a debug binary with valgrind (requires valgrind; supported on Linux, but e.g., not on macOS)
+[linux]
+valgrind: clean build
+    valgrind -v --error-exitcode=1 --track-origins=yes --leak-check=full target/debug/rust-template-app
+
 # run check then tests when sources change (requires https://github.com/watchexec/cargo-watch)
 watch-test:
     cargo watch -q -c -x check -x 'nextest run'
