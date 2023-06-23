@@ -159,3 +159,6 @@ valgrind: clean build
 watch-test:
     cargo watch -q -c -x check -x 'nextest run'
 
+# run tests when sources change (requires https://github.com/Canop/bacon)
+watch-test-bacon:
+    bacon test
