@@ -32,6 +32,19 @@ asm *args='':
 audit:
     cargo audit
 
+# list the biggest functions in the release build (requires https://github.com/RazrFalcon/cargo-bloat)
+bloat-biggest-functions:
+    cargo bloat --release -n 10
+
+# list the biggest dependencies in the release build (requires https://github.com/RazrFalcon/cargo-bloat)
+bloat-biggest-deps:
+    cargo bloat --release --crates
+
+# generate report for compilation times
+timings:
+    @echo "Details at https://doc.rust-lang.org/stable/cargo/reference/timings.html"
+    cargo build --timings
+
 # build debug executable
 build: lint
     cargo build && echo "Executable at target/debug/{{binary}}"
