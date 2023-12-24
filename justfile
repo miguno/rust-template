@@ -26,6 +26,7 @@ asm *args='':
     # just asm --lib
     # just asm --lib 0
     # just asm --lib "rust_template::doubler"
+    # just asm --bin rust-template-app 0
     cargo asm {{args}}
 
 # detect known vulnerabilities (requires https://github.com/rustsec/rustsec)
