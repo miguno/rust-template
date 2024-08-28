@@ -25,4 +25,4 @@ path = "src/main.rs"
 name = "rust-template-app"
 
 [dependencies]
-base64 = "0.21.2"
+base64 = "0.22.1"
