@@ -173,7 +173,7 @@ valgrind: clean build
 watch:
     # Watch all rs and toml files in the current directory and all
     # subdirectories for changes.  If something changed, re-run the build.
-    @watchexec -e rs,toml -- just build
+    @watchexec --clear --exts rs,toml -- just build
 
 # run check then tests when sources change (requires https://github.com/watchexec/cargo-watch)
 watch-test:
