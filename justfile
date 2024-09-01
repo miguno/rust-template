@@ -181,4 +181,4 @@ watch-test:
 
 # run tests when sources change (requires https://github.com/Canop/bacon)
 watch-test-bacon:
-    bacon test
+    bacon --no-wrap test
