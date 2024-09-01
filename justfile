@@ -169,7 +169,7 @@ version:
 valgrind: clean build
     valgrind -v --error-exitcode=1 --track-origins=yes --leak-check=full target/debug/rust-template-app
 
-# watch sources for changes and trigger a rebuild (requires https://github.com/watchexec/watchexec)
+# run build when sources change (requires https://github.com/watchexec/watchexec)
 watch:
     # Watch all rs and toml files in the current directory and all
     # subdirectories for changes.  If something changed, re-run the build.
