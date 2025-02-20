@@ -14,7 +14,7 @@ keywords = [
     "bar",
 ]
 license = "MIT"
-edition = "2021"
+edition = "2024"
 readme = "README.md"
 documentation = "https://github.com/miguno/rust-template"
 homepage = "https://github.com/miguno/rust-template"
