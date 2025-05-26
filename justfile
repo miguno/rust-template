@@ -200,7 +200,7 @@ timings:
 version:
     @echo "{{version}}"
 
-# test a debug binary with valgrind (requires valgrind; supported on Linux, but e.g., not on macOS)
+# test a debug binary with valgrind (requires valgrind; supported on Linux, but not on, e.g., macOS)
 [group('development')]
 [linux]
 valgrind: clean build
