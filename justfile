@@ -137,6 +137,8 @@ license:
 # linters (requires https://github.com/rust-lang/rust-clippy)
 [group('development')]
 lint:
+    #!/usr/bin/env bash
+    #
     # Default clippy settings (used by `cargo [build, test]` automatically):
     #
     #   cargo clippy
