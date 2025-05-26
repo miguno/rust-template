@@ -63,6 +63,11 @@ bloat-biggest-deps:
 build: lint
     cargo build && echo "Executable at target/debug/{{binary}}"
 
+# build a static debug executable
+[group('development')]
+build-static: lint
+    RUSTFLAGS='-C target-feature=+crt-static' cargo build && echo "Executable at target/debug/{{binary}}"
+
 # analyze the current package and report errors, but don't build object files (faster than 'build')
 [group('development')]
 check:
