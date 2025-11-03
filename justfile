@@ -218,14 +218,14 @@ valgrind: clean build
 watch:
     # Watch all rs and toml files in the current directory and all
     # subdirectories for changes.  If something changed, re-run the build.
-    @watchexec --clear --exts rs,toml -- just build
+    CARGO_INCREMENTAL=1 watchexec --clear --exts rs,toml -- just build
 
 # run check then tests when sources change (requires https://github.com/watchexec/cargo-watch)
 [group('development')]
 watch-test:
-    cargo watch -q -c -x check -x 'nextest run'
+    CARGO_INCREMENTAL=1 cargo watch -q -c -x check -x 'nextest run'
 
 # run tests when sources change (requires https://github.com/Canop/bacon)
 [group('development')]
 watch-test-bacon:
-    bacon --no-wrap test
+    CARGO_INCREMENTAL=1 bacon --no-wrap test
