@@ -117,7 +117,7 @@ docs:
 # format source code
 [group('development')]
 format:
-    cargo +nightly fmt
+    cargo +nightly fmt -- --config imports_granularity=Item
 
 # build and install the binary locally
 [group('development')]
@@ -134,7 +134,7 @@ install-static: build test
 license:
     cargo license
 
-# linters (requires https://github.com/rust-lang/rust-clippy)
+# lint the sources
 [group('development')]
 lint:
     #!/usr/bin/env bash
@@ -152,6 +152,11 @@ lint:
     # -D warnings:    fail the build when encountering warnings
     #
     cargo clippy --verbose --all-targets --all-features --tests -- -D warnings
+
+# auto-apply fixes to lint problems
+[group('development')]
+lint-autocorrect:
+    cargo clippy --fix --verbose --all-targets --all-features --tests --allow-dirty "$@"
 
 # detect undefined behavior with miri (requires https://github.com/rust-lang/miri)
 [group('security')]
