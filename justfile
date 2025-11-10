@@ -151,7 +151,7 @@ lint:
     # --all-features: check non-default crate features
     # -D warnings:    fail the build when encountering warnings
     #
-    cargo clippy --verbose --all-targets --all-features -- -D warnings
+    cargo clippy --verbose --all-targets --all-features --tests -- -D warnings
 
 # detect undefined behavior with miri (requires https://github.com/rust-lang/miri)
 [group('security')]
