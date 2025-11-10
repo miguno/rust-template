@@ -192,9 +192,13 @@ run:
     cargo run
 
 # run tests (requires https://nexte.st/)
+#
+# `--no-fail-fast` is important to ensure all tests are being run.
+#
+# Run `cargo install cargo-nextest` if you don't have nextest installed.
 [group('development')]
 test: lint
-    cargo nextest run
+    cargo nextest run --no-fail-fast
 
 # run tests in vanilla mode (use when nextest is not installed)
 [group('development')]
