@@ -1,4 +1,5 @@
-use base64::{Engine as _, engine::general_purpose};
+use base64::Engine as _;
+use base64::engine::general_purpose;
 use rust_template::sum;
 
 pub fn main() {
