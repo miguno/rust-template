@@ -26,8 +26,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           # --all-targets:  check sources and tests
           # --all-features: check non-default crate features
+          # --tests:        check all targets that have `test = true` set
           # -D warnings:    fail the build when encountering warnings
-          args: --all-targets --all-features --verbose -- -D warnings
+          args: --verbose --all-targets --all-features --tests -- -D warnings
       - name: Install cargo-audit
         run: cargo install cargo-audit
       - name: Audit
