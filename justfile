@@ -214,7 +214,9 @@ timings:
 # show version of this project
 [group('development')]
 version:
-    @echo "{{version}}"
+    @echo "Project {{version}}"
+    @rustc --version
+    @cargo --version
 
 # test a debug binary with valgrind (requires valgrind; supported on Linux, but not on, e.g., macOS)
 [group('development')]
