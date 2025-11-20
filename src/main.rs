@@ -4,7 +4,7 @@ use rust_template::sum;
 
 pub fn main() {
     let s = "Hello, world!";
-    println!("{}", s);
+    println!("{s}");
     println!("2 plus 2 ist {}, immer und überall!", sum(2, 2));
 
     // We use the base64 crate only as an example to demonstrate the use of
@@ -12,5 +12,5 @@ pub fn main() {
     // (or `cargo tree`) in a terminal to show the dependencies of this
     // project, which will include the base64 crate.
     let b64 = general_purpose::STANDARD.encode(s.as_bytes());
-    println!("'{}' in base64: '{}'", s, b64);
+    println!("'{s}' in base64: '{b64}'");
 }
