@@ -26,3 +26,14 @@ name = "rust-template-app"
 
 [dependencies]
 base64 = "0.22.1"
+
+# To allow the use of expect/panic/unwrap for a line of code, use an override
+# similar to:
+#
+#   #[allow(clippy::unwrap_used, clippy::expect_used)]
+#   panic!("example of a panic call that should be allowed")
+#
+[lints.clippy]
+expect_used = "deny" # no `expect()`
+panic = "deny"       # no `panic()`
+unwrap_used = "deny" # no `unwrap()`
