@@ -27,6 +27,9 @@ name = "rust-template-app"
 [dependencies]
 base64 = "0.22.1"
 
+# TIP: Use `[workspace.lints.clippy]` to standardize lints across all crates
+#      in a workspace. See https://stackoverflow.com/a/74545562.
+#
 [lints.clippy]
 pedantic = "deny"
 nursery = "deny"
