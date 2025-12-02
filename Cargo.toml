@@ -43,3 +43,6 @@ nursery = "deny"
 expect_used = "deny" # no `expect()`
 panic = "deny"       # no `panic()`
 unwrap_used = "deny" # no `unwrap()`
+
+[lints.rust]
+unsafe_code = "forbid"
